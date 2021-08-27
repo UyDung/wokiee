@@ -1,0 +1,40 @@
+@use 'variables' as v;
+@use 'sass:math';
+
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500&display=swap');
+
+
+
+@function torem($value) {
+     @return math($value / 16) + rem;
+}
+
+
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+
+a {
+     text-decoration: none;
+}
+
+img {
+     width: 100%;
+     height: 100%;
+}
+
+ul, ol {
+     list-style: none;
+}
+
+body {
+     font-family: 'Hind', sans-serif;
+     font-size: v.$font_size;
+     font-weight: 300;
+     line-height: torem(22);
+     color: v.$font_color;
+     background-color: v.$back_ground;
+     
+}
