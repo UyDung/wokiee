@@ -4,41 +4,131 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-       
+        <link rel="stylesheet" href="./css/styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
         <title>wokiee Clone</title>
     </head>
     <body>
-         <!-- !Header-->
+        <!-- !Header -->
         <header>
-             <!-- 1 Navigation -->
-            <nav class="header">
-                <div class="header__logo">
-                    <img
-                        src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/Logo_95x.png?v=1551529109"
-                        alt="Logo_95x"
-                    />
-                </div>
-                <div class="header__menu">
-                    <a href="#">Home</a>
-                    <a href="#">Shop</a>
-                    <a href="#">Pages</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Portfolio</a>
-                    <a href="#">Women</a>
-                    <a href="#">Men</a>
-                    <a href="#">Buy Theme!</a>
-                </div>
-                <div class="header__personal">
-                     Search
-                     Cart
-                     My Account
-                     Setting
-
-                </div>
-            </nav>
+            <!-- 1 Navigation -->
+            <nav class="panel-menu"></nav>
             <!-- 1 End of Navigation -->
+
+            <!-- 1 Mobile Header-->
+            <div class="mobile-header flex flex__row_jc_ct">
+                <div class="mobile-header__container flex flex__row_jc_sb flex__row_ai_ct">
+                    <div class="mobile-header__parent-menu">
+                        <img src="./images/humberger.svg" alt="parent menu" />
+                    </div>
+
+                    <div class="mobile-header__logo flex flex__row_ct">
+                        <img src="./images/Logo_95x.png" alt="logo" />
+                    </div>
+
+                    <div class="mobile-header__parent-menu-icons flex flex__row_jc_sb">
+                        <div class="mobile-header__search">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+
+                        <div class="mobile-header__account">
+                            <button class="account-btn">
+                                <i class="far fa-user"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Container-fluid-->
+            </div>
+            <!-- 1 End of Mobile Header-->
+
+            <!-- 1 Desktop Header -->
+            <div class="desktop-header">
+                <!-- 2 Header Container-->
+                <div class="container">
+                    <div class="header-holder flex">
+                        <!-- 3 Header logo-->
+                        <div class="obj-logo">
+                            <img src="./images/Logo_95x.png" alt="logo" />
+                        </div>
+                        <!-- 3 End of Header Logo-->
+
+                        <!-- 3 Header Menu -->
+                        <div class="obj-menu">
+                            <div class="desktop-parent-menu flex">
+                                <a href="google.com.vn" target="_blank">Home</a>
+                                <a href="google.com.vn" target="_blank">Shop</a>
+                                <a href="google.com.vn" target="_blank">Pages</a>
+                                <a href="google.com.vn" target="_blank">Blog</a>
+                                <a href="google.com.vn" target="_blank">Portfolio</a>
+                                <a href="google.com.vn" target="_blank">Women</a>
+                                <a href="google.com.vn" target="_blank">Men</a>
+                                <a href="google.com.vn" target="_blank">Buy Theme!</a>
+                            </div>
+                        </div>
+                        <!-- 3 End of Header menu-->
+
+                        <!-- 3 Header personal -->
+                        <div class="obj-options flex">
+                            <!-- Search Option -->
+                            <div class="search-option">
+                                <button class="search-btn" id="search-btn" data-tooltip="Search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div class="container">
+                                        <form action="#" method="get" role="search">
+                                            <div class="form-control">
+                                                <label for="">What are you Looking for?</label>
+                                                <input type="text" placeholder="Search Products..." required />
+                                            </div>
+
+                                            <button type="submit" id="submit">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+
+                                            <button id="close-search-form" aria-label="Close Search Form">X</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cart Option -->
+                            <div class="cart-option">
+                              <button class="shopping-btn" data-tooltip="Shopping cart">
+                                   <i class="fas fa-shopping-cart"></i>
+                               </button>
+                            </div>
+
+                            <!-- Account Option -->
+                           <div class="account-option">
+                              <button class="account-btn" data-tooltip="My Account">
+                                   <i class="far fa-user"></i>
+                               </button>
+                           </div>
+
+                           <!-- Setting Option-->
+                           <div class="setting-option">
+                              <button class="setting-btn" data-tooltip="Setting">
+                                   <i class="fas fa-sliders-h"></i>
+                               </button>
+                           </div>
+                        </div>
+                        <!-- 3 End of Header Personal-->
+                    </div>
+                </div>
+                <!-- 2 End of Desktop Header Container-->
+            </div>
+            <!-- 1 End of Desktop Header -->
         </header>
         <!-- ! End of Header -->
 

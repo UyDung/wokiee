@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500&display=swap");
-* {
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -7,6 +7,7 @@
 
 a {
   text-decoration: none;
+  color: #777;
 }
 
 img {
@@ -20,11 +21,126 @@ ul, ol {
 
 body {
   font-family: "Hind", sans-serif;
-  font-size: 0.875 rem;
+  font-size: 0.875rem;
   font-weight: 300;
-  line-height: math(1.375)rem;
+  line-height: 1.375rem;
   color: #777;
   background-color: #fff;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex__row_ai_fs {
+  align-items: flex-start;
+}
+.flex__row_jc_sb {
+  justify-content: space-between;
+}
+.flex__col {
+  flex-direction: column;
+}
+.flex__col_ai_fs {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.flex__col_jc_sb {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 75rem;
+  margin: auto;
+}
+
+header nav.panel-menu {
+  color: red;
+}
+header .mobile-header {
+  max-width: 64rem;
+  margin: auto;
+  height: 3.125rem;
+  display: none;
+}
+header .mobile-header__container {
+  width: 100%;
+  padding: 0 1.25rem;
+}
+header .desktop-header {
+  height: 3.25rem;
+  margin: auto;
+  background-color: #fff;
+}
+header .desktop-header .container {
+  max-width: 75rem;
+  height: 100%;
+  margin: auto;
+  padding: 0.625rem 0;
+  padding: 0 0.625rem;
+}
+header .desktop-header .container .header-holder {
+  width: 100%;
+  height: 100%;
+  gap: 1.25rem;
+}
+header .desktop-header .container .header-holder .obj-menu .desktop-parent-menu {
+  gap: 0.3125rem;
+}
+header .desktop-header .container .header-holder .obj-menu .desktop-parent-menu > a {
+  text-transform: uppercase;
+  padding: 0 0.5rem;
+  font-weight: 500;
+}
+header .desktop-header .container .header-holder .obj-menu .desktop-parent-menu > a:hover {
+  color: #437CF8;
+}
+header .desktop-header .container .header-holder .obj-options {
+  margin-left: auto;
+  display: flex;
+  gap: 0.625rem;
+}
+header .desktop-header .container .header-holder .obj-options button {
+  border: 0;
+  color: #706666;
+  background-color: transparent;
+  font-size: 1.125rem;
+  padding: 0.625rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+header .desktop-header .container .header-holder .obj-options button::before {
+  content: attr(data-tooltip);
+  width: max-content;
+  position: absolute;
+  top: 80px;
+  font-size: 0.8125rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3125rem;
+  transition: 0.5s ease-in-out;
+  visibility: hidden;
+}
+header .desktop-header .container .header-holder .obj-options button::after {
+  content: "";
+  position: absolute;
+  top: 70px;
+  border-style: solid;
+  border-width: 0 7px 10px 7px;
+  border-color: transparent transparent #fff transparent;
+  transition: 0.4s ease-in-out;
+  visibility: hidden;
+}
+header .desktop-header .container .header-holder .obj-options button:hover::before, header .desktop-header .container .header-holder .obj-options button:hover::after {
+  transform: translateY(-40px);
+  visibility: visible;
+}
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
