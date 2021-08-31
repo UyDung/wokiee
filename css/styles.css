@@ -295,7 +295,7 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
 .sale__items {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  column-gap: 1.25rem;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -308,20 +308,36 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   position: relative;
   cursor: pointer;
   height: auto;
-  overflow: hidden;
-  height: 460px;
+}
+.sale__items .product__image .compare {
+  position: absolute;
+  flex-direction: column;
+  gap: 1.25rem;
+  top: 10px;
+  right: 10px;
+  z-index: 12345;
+  opacity: 1;
 }
 .sale__items .product__description {
-  transition: transform 1s linear;
-  top: 0;
+  transition: 0.2s linear;
   background-color: #fff;
   width: 100%;
-  z-index: 123;
+  height: auto;
+  color: #000;
+  padding-top: 0.625rem;
+}
+.sale__items .product__description .product__info {
+  text-transform: uppercase;
+}
+.sale__items .product__description .product__price {
+  font-weight: bold;
+  letter-spacing: 0.0625rem;
 }
 .sale__items .product__description .product__rating {
   color: yellow;
 }
 .sale__items .product__description .product__options {
+  margin-top: 0.9375rem;
   display: flex;
   justify-content: center;
   gap: 1.25rem;
@@ -332,26 +348,21 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   gap: 1.875rem;
 }
 .sale__items .product__description .product__inside-hover .add-to-cart .btn {
+  margin-top: 0.625rem;
   background-color: #437CF8;
   color: #fff;
+  opacity: 0;
+  transition: 0.1s linear;
+  padding: 0.625rem 1.25rem;
 }
 .sale__items .product__description .product__inside-hover .compare {
-  display: flex;
-  flex-direction: column;
-  gap: 1.875rem;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  visibility: hidden;
-  transition: visibility 1s;
+  display: none;
 }
 .sale__items .product:hover .product__description {
-  transform: translateY(-100px);
+  transform: translateY(-80px);
 }
-.sale__items .product:hover .compare {
-  visibility: visible;
+.sale__items .product:hover .product__description .btn {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=styles.css.map */
