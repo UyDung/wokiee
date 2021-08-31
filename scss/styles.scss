@@ -66,10 +66,8 @@ header {
                         padding: g.torem(10);
                         cursor: pointer;
 
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
                         position: relative;
+                        z-index: 1;
 
                         &::before {
                             content: attr(data-tooltip);
@@ -99,22 +97,106 @@ header {
                         &:hover::after {
                             transform: translateY(-40px);
                             visibility: visible;
+                            opacity: 1;
                         }
                     }
 
                     .search-option {
+                        position: relative;
                         .dropdown-menu {
-                            display: none;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            visibility: hidden;
+                            transition: linear 1s ease-in-out;
+                            z-index: 22;
+
+                            .container {
+                                background: #fff;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 100%;
+                                padding: g.torem(40) g.torem(10);
+
+                                form {
+                                    position: relative;
+                                    width: 100%;
+                                    height: 100%;
+
+                                    .form-control {
+                                        input {
+                                            display: block;
+                                            margin: g.torem(10) 0;
+                                            width: 100%;
+                                            text-transform: uppercase;
+                                            font-size: g.torem(20);
+                                            border: 0;
+                                            border-bottom: 1px solid #e2e1e1;
+                                            padding: g.torem(18) 0;
+
+                                            &:focus {
+                                                outline: none;
+                                            }
+                                        }
+                                    }
+
+                                    #submit {
+                                        position: absolute;
+                                        right: g.torem(-10);
+                                        bottom: g.torem(10);
+                                        font-size: g.torem(25);
+                                        cursor: pointer;
+                                        padding: g.torem(5);
+                                    }
+
+                                    #close-search-form {
+                                        position: absolute;
+                                        right: g.torem(-5);
+                                        top: g.torem(-10);
+                                        cursor: pointer;
+                                        font-size: g.torem(14);
+                                        padding: g.torem(5);
+                                    }
+                                }
+                            }
+
+                            @keyframes show-dropdown-menu {
+                                0% {
+                                    top: -800px;
+                                }
+
+                                100% {
+                                    top: 0;
+                                }
+                            }
                         }
                     }
 
+                    .dropdown-menu {
+                        position: absolute;
+                        top: 40px;
+                        width: g.torem(200);
+                        height: g.torem(200);
+
+                        visibility: hidden;
+                        background-color: red;
+                    }
+
                     .cart-option {
+                        position: relative;
+                        z-index: 22;
                     }
 
                     .account-option {
+                        position: relative;
+                        z-index: 22;
                     }
 
                     .setting-option {
+                        position: relative;
+                        z-index: 22;
                     }
                 }
             }
@@ -123,3 +205,160 @@ header {
     // End of Desktop Header
 }
 // ! End of Header
+
+// ! Main
+.main {
+    width: 100%;
+
+    .categories {
+        width: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: g.torem(20);
+        padding: g.torem(20);
+
+        .women {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+        }
+
+        .shoes {
+            grid-column: 3 / span 2;
+            grid-row: 2;
+        }
+
+        .item {
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+
+            .btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: color 0.3s linear;
+            }
+
+            &:hover .btn {
+                background-color: v.$primary_color;
+                color: #fff;
+            }
+
+            img {
+                transition: transform 1s;
+            }
+
+            &:hover > img {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+    }
+}
+
+/* Sale products */
+.sale {
+     text-align: center;
+     margin: g.torem(20);
+     
+     .sale__header {
+          text-transform: uppercase;
+          color: #000;
+          margin-bottom: g.torem(30);
+          line-height: 2;
+     }
+     &__items {          
+          display: flex;
+          justify-content: center;
+          gap: g.torem(20);
+          flex-wrap: wrap;
+          width: 100%;
+         
+          .product {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               text-align: center;
+               position: relative; 
+               cursor: pointer;
+               height: auto;
+               overflow: hidden;
+               height: 460px;             
+               
+             
+
+               &__description {
+                    transition: transform 1s linear;                  
+                    top: 0;
+                    background-color: #fff;
+                    width: 100%;
+                    
+                    z-index: 123;
+
+                    .product__rating {
+                         color: yellow;
+                         
+                    }
+
+                    .product__options {
+                         display: flex;
+                         justify-content: center;
+                         gap: g.torem(20);
+                    }
+
+                    .product__inside-hover {
+                         display: flex;
+                         flex-direction: column;
+                         gap: g.torem(30);
+
+                         .add-to-cart {
+
+                              .btn {
+                                   background-color: v.$primary_color;
+                                   color: #fff;
+                              }
+                         }
+
+                         .compare {
+                              display: flex;
+                              flex-direction: column;
+                              gap: g.torem(30);
+                              align-items: center;
+                              justify-content: center;
+                              position: absolute;
+                              top: 10px;
+                              right: 10px;
+                              // opacity: 0; 
+                              visibility: hidden;
+                              transition: visibility 1s;
+                              
+                         }
+
+
+                    }
+               }
+
+               
+             
+               
+          }
+
+          .product:hover .product__description {
+               transform: translateY(-100px);
+          }
+
+          .product:hover .compare { 
+                   
+               visibility: visible;
+          }
+
+          
+
+
+     }
+    
+
+}

@@ -81,47 +81,77 @@
                         <div class="obj-options flex">
                             <!-- Search Option -->
                             <div class="search-option">
-                                <button class="search-btn" id="search-btn" data-tooltip="Search">
+                                <button class="search-btn flex btn-option" id="search-btn" data-tooltip="Search">
                                     <i class="fas fa-search"></i>
                                 </button>
                                 <div class="dropdown-menu">
                                     <div class="container">
                                         <form action="#" method="get" role="search">
                                             <div class="form-control">
-                                                <label for="">What are you Looking for?</label>
-                                                <input type="text" placeholder="Search Products..." required />
+                                                <label>What are you Looking for?</label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Search Products..."
+                                                    autocomplete="off"
+                                                    aria-label="Search Products..."
+                                                />
                                             </div>
 
                                             <button type="submit" id="submit">
                                                 <i class="fas fa-search"></i>
                                             </button>
 
-                                            <button id="close-search-form" aria-label="Close Search Form">X</button>
+                                            <button id="close-search-form" aria-label="Close Search Form">
+                                                X
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Cart Option -->
-                            <div class="cart-option">
-                              <button class="shopping-btn" data-tooltip="Shopping cart">
-                                   <i class="fas fa-shopping-cart"></i>
-                               </button>
+                            <div class="cart-option flex">
+                                <button
+                                    class="shopping-btn flex btn-option"
+                                    id="btn-cart"
+                                    data-tooltip="Shopping cart"
+                                >
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                                <div class="dropdown-menu" id="cart">
+                                    <p>No Product in the Cart</p>
+                                </div>
                             </div>
 
                             <!-- Account Option -->
-                           <div class="account-option">
-                              <button class="account-btn" data-tooltip="My Account">
-                                   <i class="far fa-user"></i>
-                               </button>
-                           </div>
+                            <div class="account-option flex">
+                                <button class="account-btn flex btn-option" data-tooltip="My Account">
+                                    <i class="far fa-user"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li><a href="#">Sign In</a></li>
+                                        <li><a href="#">Register</a></li>
+                                        <li><a href="#">View Cart</a></li>
+                                        <li><a href="#">Wishlist</a></li>
+                                        <li><a href="#">Compare</a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                           <!-- Setting Option-->
-                           <div class="setting-option">
-                              <button class="setting-btn" data-tooltip="Setting">
-                                   <i class="fas fa-sliders-h"></i>
-                               </button>
-                           </div>
+                            <!-- Setting Option-->
+                            <div class="setting-option flex">
+                                <button class="setting-btn flex btn-option" data-tooltip="Setting">
+                                    <i class="fas fa-sliders-h"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <ul>
+                                        <li><a href="#">$ Us Dollars</a></li>
+                                        <li><a href="#"> &euro Euro</a></li>
+                                        <li><a href="#"> &#163; British Pounds</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <!-- 3 End of Header Personal-->
                     </div>
@@ -132,6 +162,406 @@
         </header>
         <!-- ! End of Header -->
 
+        <!-- ! Main -->
+        <div class="main">
+            <!-- 1 Categories -->
+            <section class="categories">
+                <div class="sale item figure">
+                    <img src="./images/sale_1x.jpg" alt="sale" loading="lazy" class="image-main" />
+                    <!-- <img src="./images/sale_1x.jpg" alt="sale" loading="lazy" class="image-hover" /> -->
+                    <button class="btn">Sale</button>
+                </div>
+                <div class="women item figure">
+                    <img src="./images/women_1x.jpg" alt="women" loading="lazy" class="image-main" />
+                    <!-- <img src="./images/women_1x.jpg" alt="women" loading="lazy" class="image-hover" /> -->
+                    <button class="btn">Women</button>
+                </div>
+                <div class="men item figure">
+                    <img src="./images/men_1x.jpg" alt="men" loading="lazy" class="image-main" />
+                    <!-- <img src="./images/men_1x.jpg" alt="men" loading="lazy" class="image-hover" /> -->
+                    <button class="btn">Men</button>
+               </div>
+               <div class="accessories item figure">
+                    <img src="./images/accessories_1x.jpg" alt="accessories" loading="lazy" class="image-main" />
+                    <!-- <img src="./images/accessories_1x.jpg" alt="accessories" loading="lazy" class="image-hover" /> -->
+                    <button class="btn">accessories</button>
+                </div>
+                <div class="news item figure">
+                    <img src="./images/news_1x.jpg" alt="news" loading="lazy" class="image-main" />
+                    <!-- <img src="./images/news_1x.jpg" alt="news" loading="lazy" class="image-hover" /> -->
+                    <button class="btn">news</button>
+                </div>
+                <div class="shoes item figure">
+                    <img src="./images/shoes_1x.jpg" alt="shoes" loading="lazy" class="image-main" />
+                    <!-- <img src="./images/shoes_1x.jpg" alt="shoes" loading="lazy" class="image-hover" /> -->
+                    <button class="btn">shoes</button>
+                </div>
+            </section>
+
+            <!-- 1 Best Seller -->
+            <section class="sale">
+                 <div class="sale__header">
+                      <h2>Best Seller</h2>
+                      <h3>Top Products of this week</h3>
+                 </div>
+                 <div class="sale__items">
+                      <div class="product">
+                         <div class="product__image">
+                              <img src="./images/sale1.jpg" alt="sale 1">
+                         </div>
+                         <div class="product__description">
+                              <h4 class="product__info">Gap</h4>
+                              <div class="product__rating">
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                              </div>
+                              <p class="product__name">
+                                   Premier Cropped Skinny Jean
+                              </p>
+                              <p class="product__price">
+                                   $380.00
+                              </p>
+                              <div class="product__options">
+                                   <div class="options_1">
+                                        <a href="#">
+                                             <img src="./images/sale1.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                                   <div class="options_2">
+                                        <a href="#">
+                                             <img src="./images/sale2.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="product__inside-hover">
+                                   <div class="add-to-cart ">
+                                        <button class="btn">Add to Cart</button>
+                                   </div>
+                                   <div class="compare">
+                                        <span title="Quick View"><i class="far fa-eye"></i></span>
+                                        <span title="Like"><i class="far fa-heart"></i></span>
+                                        <span title="Add to Compare"><i class="fas fa-balance-scale"></i></span>
+                                   </div>
+                              </div>
+                         </div>
+                      </div>
+
+                      <div class="product">
+                         <div class="product__image">
+                              <img src="./images/sale2.jpg" alt="sale 1">
+                         </div>
+                         <div class="product__description">
+                              <h4 class="product__info">Gap</h4>
+                              <div class="product__rating">
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                              </div>
+                              <p class="product__name">
+                                   Premier Cropped Skinny Jean
+                              </p>
+                              <p class="product__price">
+                                   $380.00
+                              </p>
+                              <div class="product__options">
+                                   <div class="options_1">
+                                        <a href="#">
+                                             <img src="./images/sale2.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                                   <div class="options_2">
+                                        <a href="#">
+                                             <img src="./images/sale3.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="product__inside-hover">
+                                   <div class="add-to-cart ">
+                                        <button class="btn">Add to Cart</button>
+                                   </div>
+                                   <div class="compare">
+                                        <span title="Quick View"><i class="far fa-eye"></i></span>
+                                        <span title="Like"><i class="far fa-heart"></i></span>
+                                        <span title="Add to Compare"><i class="fas fa-balance-scale"></i></span>
+                                   </div>
+                              </div>
+                         </div>
+                      </div>
+
+                      <div class="product">
+                         <div class="product__image">
+                              <img src="./images/sale3.jpg" alt="sale 1">
+                         </div>
+                         <div class="product__description">
+                              <h4 class="product__info">Gap</h4>
+                              <div class="product__rating">
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                              </div>
+                              <p class="product__name">
+                                   Premier Cropped Skinny Jean
+                              </p>
+                              <p class="product__price">
+                                   $380.00
+                              </p>
+                              <div class="product__options">
+                                   <div class="options_1">
+                                        <a href="#">
+                                             <img src="./images/sale3.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                                   <div class="options_2">
+                                        <a href="#">
+                                             <img src="./images/sale4.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="product__inside-hover">
+                                   <div class="add-to-cart ">
+                                        <button class="btn">Add to Cart</button>
+                                   </div>
+                                   <div class="compare">
+                                        <span title="Quick View"><i class="far fa-eye"></i></span>
+                                        <span title="Like"><i class="far fa-heart"></i></span>
+                                        <span title="Add to Compare"><i class="fas fa-balance-scale"></i></span>
+                                   </div>
+                              </div>
+                         </div>
+                      </div>
+
+                      <div class="product">
+                         <div class="product__image">
+                              <img src="./images/sale4.jpg" alt="sale 1">
+                         </div>
+                         <div class="product__description">
+                              <h4 class="product__info">Gap</h4>
+                              <div class="product__rating">
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                              </div>
+                              <p class="product__name">
+                                   Premier Cropped Skinny Jean
+                              </p>
+                              <p class="product__price">
+                                   $380.00
+                              </p>
+                              <div class="product__options">
+                                   <div class="options_1">
+                                        <a href="#">
+                                             <img src="./images/sale4.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                                   <div class="options_2">
+                                        <a href="#">
+                                             <img src="./images/sale5.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="product__inside-hover">
+                                   <div class="add-to-cart ">
+                                        <button class="btn">Add to Cart</button>
+                                   </div>
+                                   <div class="compare">
+                                        <span title="Quick View"><i class="far fa-eye"></i></span>
+                                        <span title="Like"><i class="far fa-heart"></i></span>
+                                        <span title="Add to Compare"><i class="fas fa-balance-scale"></i></span>
+                                   </div>
+                              </div>
+                         </div>
+                      </div>
+
+                      <div class="product">
+                         <div class="product__image">
+                              <img src="./images/sale5.jpg" alt="sale 1">
+                         </div>
+                         <div class="product__description">
+                              <h4 class="product__info">Gap</h4>
+                              <div class="product__rating">
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                              </div>
+                              <p class="product__name">
+                                   Premier Cropped Skinny Jean
+                              </p>
+                              <p class="product__price">
+                                   $380.00
+                              </p>
+                              <div class="product__options">
+                                   <div class="options_1">
+                                        <a href="#">
+                                             <img src="./images/sale5.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                                   <div class="options_2">
+                                        <a href="#">
+                                             <img src="./images/sale6.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="product__inside-hover">
+                                   <div class="add-to-cart ">
+                                        <button class="btn">Add to Cart</button>
+                                   </div>
+                                   <div class="compare">
+                                        <span title="Quick View"><i class="far fa-eye"></i></span>
+                                        <span title="Like"><i class="far fa-heart"></i></span>
+                                        <span title="Add to Compare"><i class="fas fa-balance-scale"></i></span>
+                                   </div>
+                              </div>
+                         </div>
+                      </div>
+
+                      <div class="product">
+                         <div class="product__image">
+                              <img src="./images/sale6.jpg" alt="sale 1">
+                         </div>
+                         <div class="product__description">
+                              <h4 class="product__info">Gap</h4>
+                              <div class="product__rating">
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                              </div>
+                              <p class="product__name">
+                                   Premier Cropped Skinny Jean
+                              </p>
+                              <p class="product__price">
+                                   $380.00
+                              </p>
+                              <div class="product__options">
+                                   <div class="options_1">
+                                        <a href="#">
+                                             <img src="./images/sale6.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                                   <div class="options_2">
+                                        <a href="#">
+                                             <img src="./images/sale7.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="product__inside-hover">
+                                   <div class="add-to-cart ">
+                                        <button class="btn">Add to Cart</button>
+                                   </div>
+                                   <div class="compare">
+                                        <span title="Quick View"><i class="far fa-eye"></i></span>
+                                        <span title="Like"><i class="far fa-heart"></i></span>
+                                        <span title="Add to Compare"><i class="fas fa-balance-scale"></i></span>
+                                   </div>
+                              </div>
+                         </div>
+                      </div>
+
+                      <div class="product">
+                         <div class="product__image">
+                              <img src="./images/sale7.jpg" alt="sale 1">
+                         </div>
+                         <div class="product__description">
+                              <h4 class="product__info">Gap</h4>
+                              <div class="product__rating">
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                              </div>
+                              <p class="product__name">
+                                   Premier Cropped Skinny Jean
+                              </p>
+                              <p class="product__price">
+                                   $380.00
+                              </p>
+                              <div class="product__options">
+                                   <div class="options_1">
+                                        <a href="#">
+                                             <img src="./images/sale7.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                                   <div class="options_2">
+                                        <a href="#">
+                                             <img src="./images/sale8.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="product__inside-hover">
+                                   <div class="add-to-cart ">
+                                        <button class="btn">Add to Cart</button>
+                                   </div>
+                                   <div class="compare">
+                                        <span title="Quick View"><i class="far fa-eye"></i></span>
+                                        <span title="Like"><i class="far fa-heart"></i></span>
+                                        <span title="Add to Compare"><i class="fas fa-balance-scale"></i></span>
+                                   </div>
+                              </div>
+                         </div>
+                      </div>
+
+                      <div class="product">
+                         <div class="product__image">
+                              <img src="./images/sale8.jpg" alt="sale 1">
+                         </div>
+                         <div class="product__description">
+                              <h4 class="product__info">Gap</h4>
+                              <div class="product__rating">
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                                   <i class="far fa-star"></i>
+                              </div>
+                              <p class="product__name">
+                                   Premier Cropped Skinny Jean
+                              </p>
+                              <p class="product__price">
+                                   $380.00
+                              </p>
+                              <div class="product__options">
+                                   <div class="options_1">
+                                        <a href="#">
+                                             <img src="./images/sale1.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                                   <div class="options_2">
+                                        <a href="#">
+                                             <img src="./images/sale8.jpg" alt="gray" style="width: 80px; height: 80px; border-radius: 5px">
+                                        </a>
+                                   </div>
+                              </div>
+                              <div class="product__inside-hover">
+                                   <div class="add-to-cart ">
+                                        <button class="btn">Add to Cart</button>
+                                   </div>
+                                   <div class="compare">
+                                        <span title="Quick View"><i class="far fa-eye"></i></span>
+                                        <span title="Like"><i class="far fa-heart"></i></span>
+                                        <span title="Add to Compare"><i class="fas fa-balance-scale"></i></span>
+                                   </div>
+                              </div>
+                         </div>
+                      </div>
+
+                     
+                 </div>
+            </section>
+        </div>
+        <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
         <script src="./script/script.js"></script>
     </body>
 </html>

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -15,7 +17,8 @@ img {
   height: 100%;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -30,6 +33,7 @@ body {
 
 .flex {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .flex__row_ai_fs {
@@ -53,6 +57,19 @@ body {
 .container {
   max-width: 75rem;
   margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9375rem 2.5rem;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  opacity: 0.9;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #191919;
 }
 
 header nav.panel-menu {
@@ -108,10 +125,8 @@ header .desktop-header .container .header-holder .obj-options button {
   font-size: 1.125rem;
   padding: 0.625rem;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  z-index: 1;
 }
 header .desktop-header .container .header-holder .obj-options button::before {
   content: attr(data-tooltip);
@@ -138,9 +153,205 @@ header .desktop-header .container .header-holder .obj-options button::after {
 header .desktop-header .container .header-holder .obj-options button:hover::before, header .desktop-header .container .header-holder .obj-options button:hover::after {
   transform: translateY(-40px);
   visibility: visible;
+  opacity: 1;
+}
+header .desktop-header .container .header-holder .obj-options .search-option {
+  position: relative;
 }
 header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  transition: linear 1s ease-in-out;
+  z-index: 22;
+}
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2.5rem 0.625rem;
+}
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form .form-control input {
+  display: block;
+  margin: 0.625rem 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  border: 0;
+  border-bottom: 1px solid #e2e1e1;
+  padding: 1.125rem 0;
+}
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form .form-control input:focus {
+  outline: none;
+}
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form #submit {
+  position: absolute;
+  right: -0.625rem;
+  bottom: 0.625rem;
+  font-size: 1.5625rem;
+  cursor: pointer;
+  padding: 0.3125rem;
+}
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form #close-search-form {
+  position: absolute;
+  right: -0.3125rem;
+  top: -0.625rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0.3125rem;
+}
+@keyframes show-dropdown-menu {
+  0% {
+    top: -800px;
+  }
+  100% {
+    top: 0;
+  }
+}
+header .desktop-header .container .header-holder .obj-options .dropdown-menu {
+  position: absolute;
+  top: 40px;
+  width: 12.5rem;
+  height: 12.5rem;
+  visibility: hidden;
+  background-color: red;
+}
+header .desktop-header .container .header-holder .obj-options .cart-option {
+  position: relative;
+  z-index: 22;
+}
+header .desktop-header .container .header-holder .obj-options .account-option {
+  position: relative;
+  z-index: 22;
+}
+header .desktop-header .container .header-holder .obj-options .setting-option {
+  position: relative;
+  z-index: 22;
+}
+
+.main {
+  width: 100%;
+}
+.main .categories {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+.main .categories .women {
+  grid-column: 2;
+  grid-row: 1/span 2;
+}
+.main .categories .shoes {
+  grid-column: 3/span 2;
+  grid-row: 2;
+}
+.main .categories .item {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.main .categories .item .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: color 0.3s linear;
+}
+.main .categories .item:hover .btn {
+  background-color: #437CF8;
+  color: #fff;
+}
+.main .categories .item img {
+  transition: transform 1s;
+}
+.main .categories .item:hover > img {
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+/* Sale products */
+.sale {
+  text-align: center;
+  margin: 1.25rem;
+}
+.sale .sale__header {
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 1.875rem;
+  line-height: 2;
+}
+.sale__items {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.sale__items .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  height: auto;
+  overflow: hidden;
+  height: 460px;
+}
+.sale__items .product__description {
+  transition: transform 1s linear;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+  z-index: 123;
+}
+.sale__items .product__description .product__rating {
+  color: yellow;
+}
+.sale__items .product__description .product__options {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.sale__items .product__description .product__inside-hover {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+.sale__items .product__description .product__inside-hover .add-to-cart .btn {
+  background-color: #437CF8;
+  color: #fff;
+}
+.sale__items .product__description .product__inside-hover .compare {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  visibility: hidden;
+  transition: visibility 1s;
+}
+.sale__items .product:hover .product__description {
+  transform: translateY(-100px);
+}
+.sale__items .product:hover .compare {
+  visibility: visible;
 }
 
 /*# sourceMappingURL=styles.css.map */
