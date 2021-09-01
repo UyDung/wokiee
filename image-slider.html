@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Image Slider</title>
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+     <!-- Image slider start-->
+     <div class="slider">
+          <div class="slides">
+               <!-- radio button start-->
+               <input type="radio" id="radio1" name="radio-btn">
+               <input type="radio" id="radio2" name="radio-btn">
+               <input type="radio" id="radio3" name="radio-btn">
+               <input type="radio" id="radio4" name="radio-btn">
+               <!-- radio button end-->
+               <!-- slide image start-->
+               <div class="slide first">
+                    <img src="./images/showcase_1.png" alt="">
+               </div>
+               <div class="slide">
+                    <img src="./images/showcase_3.jpg" alt="">
+               </div>
+               <div class="slide">
+                    <img src="./images/showcase_2.png" alt="">
+               </div>
+               <div class="slide">
+                    <img src="./images/showcase_3.jpg" alt="">
+               </div>
+               <!-- slide image end-->
+               <!-- automatic navigation start-->
+               <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+               </div>
+               <!-- automatic navigation end-->
+               <!-- manual navigation start-->
+               <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+               </div>
+               <!-- manual navigation end-->
+          </div>
+     </div>
+     <!-- Image slider end-->
+</body>
+</html>

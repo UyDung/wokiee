@@ -238,16 +238,93 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   position: relative;
   z-index: 22;
 }
+header .showcase {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+header .showcase__slides {
+  width: 300%;
+  height: 600px;
+  position: relative;
+}
+header .showcase__slides .slide.active {
+  opacity: 1;
+}
+header .showcase__slides .slide {
+  width: 33.33%;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  transition: 1s linear;
+  opacity: 0;
+}
+header .showcase__slides .slide__text {
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+  animation: slideshow 0.5s;
+}
+header .showcase__slides .slide__text h2 {
+  color: blue;
+}
+header .showcase__slides .slide__text h3 {
+  color: orange;
+}
+header .showcase__slides .slide__text .btn {
+  background-color: blue;
+  color: #fff;
+}
+@keyframes slideshow {
+  0% {
+    top: 200%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+header .showcase__navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  justify-content: space-between;
+}
+header .showcase__navigation > * {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #cfcece;
+}
+header .showcase__navigation > .active {
+  background-color: #333;
+}
+header .showcase__navigation *:hover {
+  background-color: blue;
+  cursor: pointer;
+}
 
 .main {
   width: 100%;
 }
 .main .categories {
   width: 100%;
+  height: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  flex-wrap: wrap;
   gap: 1.25rem;
   padding: 1.25rem;
 }
@@ -261,8 +338,8 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
 }
 .main .categories .item {
   cursor: pointer;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 .main .categories .item .btn {
   position: absolute;
@@ -283,24 +360,29 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
 }
 
 /* Sale products */
-.sale {
+.best-sales {
   text-align: center;
   margin: 1.25rem;
 }
-.sale .sale__header {
+.best-sales__header {
   text-transform: uppercase;
   color: #000;
   margin-bottom: 1.875rem;
-  line-height: 2;
+  font-size: 1.0625rem;
+  line-height: 1.5;
 }
-.sale__items {
+.best-sales__header h2,
+.best-sales__header h3 {
+  font-weight: 500;
+}
+.best-sales__items {
   display: flex;
   justify-content: center;
   column-gap: 1.25rem;
   flex-wrap: wrap;
   width: 100%;
 }
-.sale__items .product {
+.best-sales__items .product {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -310,7 +392,10 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   cursor: pointer;
   height: auto;
 }
-.sale__items .product__image .compare {
+.best-sales__items .product__image {
+  background-color: #e2e2e2;
+}
+.best-sales__items .product__image .compare {
   position: absolute;
   flex-direction: column;
   gap: 0.625rem;
@@ -318,7 +403,7 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   right: 10px;
   opacity: 0;
 }
-.sale__items .product__image .compare > * {
+.best-sales__items .product__image .compare > * {
   border: none;
   border-radius: 50%;
   width: 2.8125rem;
@@ -329,29 +414,31 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   background-color: #fff;
   position: relative;
 }
-.sale__items .product__image .compare > *:hover {
+.best-sales__items .product__image .compare > *:hover {
   background-color: #437CF8;
   color: #fff;
   visibility: visible;
 }
-.sale__items .product__image .compare > *:hover::before,
-.sale__items .product__image .compare *:hover::after {
+.best-sales__items .product__image .compare > *:hover::before,
+.best-sales__items .product__image .compare *:hover::after {
   color: #000;
-  transform: translateX(40px);
+  transform: translateX(60px);
   opacity: 1;
 }
-.sale__items .product__image .compare > *::before {
+.best-sales__items .product__image .compare > *::before {
   content: attr(data-tooltip);
   position: absolute;
-  right: 100px;
+  right: 120px;
   border-radius: 7px;
   width: max-content;
   background-color: #fff;
   padding: 0.125rem 0.3125rem;
   opacity: 0;
   transition: 0.3s linear;
+  z-index: 123;
+  box-shadow: 0px 0px 5px 0px;
 }
-.sale__items .product__image .compare > *::after {
+.best-sales__items .product__image .compare > *::after {
   content: "";
   width: 0.9375rem;
   height: 0.9375rem;
@@ -359,12 +446,12 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   border-width: 10px 0px 10px 15px;
   border-color: transparent transparent transparent #fff;
   position: absolute;
-  right: 92px;
+  right: 112px;
   opacity: 0;
-  z-index: -1;
+  z-index: 3;
   transition: 0.3s linear;
 }
-.sale__items .product__image .label-location {
+.best-sales__items .product__image .label-location {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -375,17 +462,17 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   font-weight: bold;
   border-radius: 3px;
 }
-.sale__items .product__image .label-location .label-new {
+.best-sales__items .product__image .label-location .label-new {
   background-color: #437CF8;
   border-radius: 3px;
   padding: 0 0.3125rem;
 }
-.sale__items .product__image .label-location .label-sale {
+.best-sales__items .product__image .label-location .label-sale {
   background-color: red;
   border-radius: 3px;
   padding: 0 0.3125rem;
 }
-.sale__items .product__description {
+.best-sales__items .product__description {
   transition: 0.2s linear;
   background-color: #fff;
   width: 100%;
@@ -394,7 +481,7 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   padding-top: 0.625rem;
   position: relative;
 }
-.sale__items .product__description .countdown-box {
+.best-sales__items .product__description .countdown-box {
   height: 80px;
   gap: 0.625rem;
   color: #437CF8;
@@ -403,35 +490,35 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   left: 0;
   width: 100%;
 }
-.sale__items .product__description .countdown-box > * {
+.best-sales__items .product__description .countdown-box > * {
   border-radius: 5px;
   background-color: #fff;
   border: 1px solid blue;
   width: 25%;
   height: 80%;
 }
-.sale__items .product__description .product__info {
+.best-sales__items .product__description .product__info {
   text-transform: uppercase;
 }
-.sale__items .product__description .product__price {
+.best-sales__items .product__description .product__price {
   font-weight: bold;
   letter-spacing: 0.0625rem;
 }
-.sale__items .product__description .product__rating {
+.best-sales__items .product__description .product__rating {
   color: yellow;
 }
-.sale__items .product__description .product__options {
+.best-sales__items .product__description .product__options {
   margin-top: 0.9375rem;
   display: flex;
   justify-content: center;
   gap: 1.25rem;
 }
-.sale__items .product__description .product__inside-hover {
+.best-sales__items .product__description .product__inside-hover {
   display: flex;
   flex-direction: column;
   gap: 1.875rem;
 }
-.sale__items .product__description .product__inside-hover .add-to-cart .btn {
+.best-sales__items .product__description .product__inside-hover .add-to-cart .btn {
   margin-top: 0.625rem;
   background-color: #437CF8;
   color: #fff;
@@ -439,16 +526,16 @@ header .desktop-header .container .header-holder .obj-options .setting-option {
   transition: 0.1s linear;
   padding: 0.625rem 1.25rem;
 }
-.sale__items .product__description .product__inside-hover .compare {
+.best-sales__items .product__description .product__inside-hover .compare {
   display: none;
 }
-.sale__items .product:hover .product__description {
+.best-sales__items .product:hover .product__description {
   transform: translateY(-80px);
 }
-.sale__items .product:hover .product__description .btn {
+.best-sales__items .product:hover .product__description .btn {
   opacity: 1;
 }
-.sale__items .product:hover .compare {
+.best-sales__items .product:hover .compare {
   opacity: 1;
 }
 

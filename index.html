@@ -159,6 +159,51 @@
                 <!-- 2 End of Desktop Header Container-->
             </div>
             <!-- 1 End of Desktop Header -->
+
+            <!-- showcase start-->
+            <div class="showcase">
+                <div class="showcase__container">
+                    <!-- slides start-->
+                    <div class="showcase__slides flex">
+                        <div class="slide active">
+                            <img src="./images/showcase_1.png" loading="lazy" alt="showcase 1" id="slide1" />
+                            <!-- slide text start-->
+                            <div class="slide__text">
+                              <h3 class="action">You are V.I.P</h3>
+                              <h2>Find your self. Find your success</h2>
+                              <a href="#" class="btn"> Shop Now</a>
+                            </div>
+                            <!-- slide text end-->
+                        </div>
+
+                        <div class="slide">
+                            <img src="./images/showcase_2.png" loading="lazy" alt="showcase 2" id="slide2" />
+                          <!-- slide text start-->
+                          <div class="slide__text">
+                              <h3 class="action">You are V.I.P</h3>
+                              <h2>Uy Dũng</h2>
+                              <a href="#" class="btn"> Shop Now</a>
+                            </div>
+                            <!-- slide text end-->
+                         </div>
+
+                        
+                            <iframe class="slide"                           
+                                src="https://www.youtube.com/embed/1gaBCtxEgWw?rel=0&autoplay=1"                               
+                                allow="autoplay"
+                                frameborder="0"                                
+                            ></iframe>
+                        
+                    </div>
+                    <!-- slides end-->
+                    <div class="showcase__navigation flex">
+                        <label class="flex active" for="slide1"></label>
+                        <label class="flex item2" for="slide2"></label>
+                        <label class="flex item3" for="slide3"></label>
+                    </div>
+                </div>
+            </div>
+            <!-- showcase end-->
         </header>
         <!-- ! End of Header -->
 
@@ -166,45 +211,44 @@
         <div class="main">
             <!-- 1 Categories -->
             <section class="categories">
-                <div class="sale item figure">
+                <div class="sale item">
                     <img src="./images/sale_1x.jpg" alt="sale" loading="lazy" class="image-main" />
-                    <!-- <img src="./images/sale_1x.jpg" alt="sale" loading="lazy" class="image-hover" /> -->
                     <button class="btn">Sale</button>
                 </div>
-                <div class="women item figure">
+
+                <div class="women item">
                     <img src="./images/women_1x.jpg" alt="women" loading="lazy" class="image-main" />
-                    <!-- <img src="./images/women_1x.jpg" alt="women" loading="lazy" class="image-hover" /> -->
                     <button class="btn">Women</button>
                 </div>
-                <div class="men item figure">
+
+                <div class="men item">
                     <img src="./images/men_1x.jpg" alt="men" loading="lazy" class="image-main" />
-                    <!-- <img src="./images/men_1x.jpg" alt="men" loading="lazy" class="image-hover" /> -->
                     <button class="btn">Men</button>
                 </div>
-                <div class="accessories item figure">
+
+                <div class="accessories item">
                     <img src="./images/accessories_1x.jpg" alt="accessories" loading="lazy" class="image-main" />
-                    <!-- <img src="./images/accessories_1x.jpg" alt="accessories" loading="lazy" class="image-hover" /> -->
                     <button class="btn">accessories</button>
                 </div>
-                <div class="news item figure">
+
+                <div class="news item">
                     <img src="./images/news_1x.jpg" alt="news" loading="lazy" class="image-main" />
-                    <!-- <img src="./images/news_1x.jpg" alt="news" loading="lazy" class="image-hover" /> -->
                     <button class="btn">news</button>
                 </div>
-                <div class="shoes item figure">
+
+                <div class="shoes item">
                     <img src="./images/shoes_1x.jpg" alt="shoes" loading="lazy" class="image-main" />
-                    <!-- <img src="./images/shoes_1x.jpg" alt="shoes" loading="lazy" class="image-hover" /> -->
                     <button class="btn">shoes</button>
                 </div>
             </section>
 
             <!-- 1 Best Seller -->
-            <section class="sale">
-                <div class="sale__header">
+            <section class="best-sales">
+                <div class="best-sales__header">
                     <h2>Best Seller</h2>
                     <h3>Top Products of this week</h3>
                 </div>
-                <div class="sale__items">
+                <div class="best-sales__items">
                     <!-- Product 1-->
                     <div class="product">
                         <div class="product__image">
@@ -216,21 +260,21 @@
                             </div>
 
                             <span class="label-location flex">
-                                 <span class="label-new">
-                                      <span>New</span>
-                                 </span>
-                                 <span class="label-sale" style="display: none">
-                                      <span>Sale <span class="sale-percent">13</span>%</span>
-                                 </span>
+                                <span class="label-new">
+                                    <span>New</span>
+                                </span>
+                                <span class="label-sale" style="display: none">
+                                    <span>Sale <span class="sale-percent">13</span>%</span>
+                                </span>
                             </span>
                         </div>
                         <div class="product__description">
-                             <div class="countdown-box flex">
-                                   <span class="flex">77 Day</span>
-                                   <span class="flex">1 Hrs</span>
-                                   <span class="flex">9 Min</span>
-                                   <span class="flex">50 Sec</span>
-                             </div>
+                            <div class="countdown-box flex">
+                                <span class="flex">77 Day</span>
+                                <span class="flex">1 Hrs</span>
+                                <span class="flex">9 Min</span>
+                                <span class="flex">50 Sec</span>
+                            </div>
                             <h4 class="product__info">Gap</h4>
                             <div class="product__rating">
                                 <i class="far fa-star"></i>
@@ -336,13 +380,13 @@
                                 <span data-tooltip="Add to Compare"><i class="fas fa-balance-scale"></i></span>
                             </div>
                             <span class="label-location flex">
-                              <span class="label-new" style="display: none">
-                                   <span>New</span>
-                              </span>
-                              <span class="label-sale" >
-                                   <span>Sale <span class="sale-percent">13</span>%</span>
-                              </span>
-                         </span>
+                                <span class="label-new" style="display: none">
+                                    <span>New</span>
+                                </span>
+                                <span class="label-sale">
+                                    <span>Sale <span class="sale-percent">13</span>%</span>
+                                </span>
+                            </span>
                         </div>
                         <div class="product__description">
                             <h4 class="product__info">Gap</h4>

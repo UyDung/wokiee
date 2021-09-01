@@ -29,5 +29,30 @@ btnOptions.forEach((item) => {
 })
 
 
+/**** showcase slide image */
+const slides = document.querySelectorAll('.slide');
+const slideText = document.querySelectorAll('.slide__text');
+var current = 0;
+
+setInterval(() => {
+     reset();
+     slides[current].classList.add('active');
+     current++;
+     if(current === slides.length) {
+          current =  0;
+     }
+
+}, 3000);
+
+
+const reset = () => {
+     slides.forEach((item) => {
+          item.classList.remove('active');
+     })
+
+    
+
+
+}
 
 
