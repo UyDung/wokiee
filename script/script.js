@@ -42,7 +42,7 @@ setInterval(() => {
           current =  0;
      }
 
-}, 3000);
+}, 5000);
 
 
 const reset = () => {
