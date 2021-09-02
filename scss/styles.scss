@@ -24,7 +24,7 @@ header {
     // End of Mobild Header
 
     .desktop-header {
-        height: g.torem(52);
+        height: g.torem(58);
         margin: auto;
         background-color: v.$back_ground;
 
@@ -77,29 +77,30 @@ header {
                             content: attr(data-tooltip);
                             width: max-content;
                             position: absolute;
-                            top: 80px;
+                            top: 70px;
                             font-size: g.torem(13);
                             border: none;
                             border-radius: 5px;
                             padding: g.torem(5);
-                            transition: 0.5s ease-in-out;
+                            transition: 0.3s ease-in-out;
                             visibility: hidden;
+                            background-color: #fff;
                         }
 
                         &::after {
                             content: "";
                             position: absolute;
-                            top: 70px;
+                            top: 63px;
                             border-style: solid;
                             border-width: 0 7px 10px 7px;
                             border-color: transparent transparent #fff transparent;
-                            transition: 0.4s ease-in-out;
+                            transition: 0.3s ease-in-out;
                             visibility: hidden;
                         }
 
                         &:hover::before,
                         &:hover::after {
-                            transform: translateY(-40px);
+                            transform: translateY(-17px);
                             visibility: visible;
                             opacity: 1;
                         }
@@ -107,6 +108,8 @@ header {
 
                     .search-option {
                         position: relative;
+                        z-index: 1;
+
                         .dropdown-menu {
                             position: fixed;
                             top: 0;
@@ -222,12 +225,14 @@ header {
 
                .slide.active {
                    opacity: 1;   
-                   z-index: 1234;
+                   z-index: 1;
 
                    .slide__text {
-                        top: 50%;
+                        top: 50%;                                              
                    }
                }
+
+              
                
 
                .slide {
@@ -245,22 +250,19 @@ header {
                          position: absolute;
                          top: 200%;       
                          left: 50%;
-                         transform: translate(-50%, -50%);                  
-                        
+                         transform: translate(-50%, -50%); 
                          margin: auto;
-
-
                          font-size: 30px;
                          line-height: 80px;
                          font-weight: 300;
-                         transition: 2s linear;
+                         transition: 1.3s linear;
 
                          h2 {
                               color: orangered;
                          }
 
                          h3 {
-                              color: orange;
+                              color: #fcb93e;
                          }
 
                          .btn {                              

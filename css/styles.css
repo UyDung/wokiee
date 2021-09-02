@@ -92,7 +92,7 @@ header .mobile-header__container {
   padding: 0 1.25rem;
 }
 header .desktop-header {
-  height: 3.25rem;
+  height: 3.625rem;
   margin: auto;
   background-color: #fff;
 }
@@ -138,31 +138,33 @@ header .desktop-header .container .header-holder .obj-options button::before {
   content: attr(data-tooltip);
   width: max-content;
   position: absolute;
-  top: 80px;
+  top: 70px;
   font-size: 0.8125rem;
   border: none;
   border-radius: 5px;
   padding: 0.3125rem;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   visibility: hidden;
+  background-color: #fff;
 }
 header .desktop-header .container .header-holder .obj-options button::after {
   content: "";
   position: absolute;
-  top: 70px;
+  top: 63px;
   border-style: solid;
   border-width: 0 7px 10px 7px;
   border-color: transparent transparent #fff transparent;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
   visibility: hidden;
 }
 header .desktop-header .container .header-holder .obj-options button:hover::before, header .desktop-header .container .header-holder .obj-options button:hover::after {
-  transform: translateY(-40px);
+  transform: translateY(-17px);
   visibility: visible;
   opacity: 1;
 }
 header .desktop-header .container .header-holder .obj-options .search-option {
   position: relative;
+  z-index: 1;
 }
 header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu {
   position: fixed;
@@ -257,7 +259,7 @@ header .showcase__slides {
 }
 header .showcase__slides .slide.active {
   opacity: 1;
-  z-index: 1234;
+  z-index: 1;
 }
 header .showcase__slides .slide.active .slide__text {
   top: 50%;
@@ -282,13 +284,13 @@ header .showcase__slides .slide__text {
   font-size: 30px;
   line-height: 80px;
   font-weight: 300;
-  transition: 2s linear;
+  transition: 1.3s linear;
 }
 header .showcase__slides .slide__text h2 {
   color: orangered;
 }
 header .showcase__slides .slide__text h3 {
-  color: orange;
+  color: #fcb93e;
 }
 header .showcase__slides .slide__text .btn {
   background-color: blue;

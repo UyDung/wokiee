@@ -4,10 +4,10 @@ const  closeSearchForm = document.getElementById('close-search-form');
 const btnCart = document.getElementById('btn-cart');
 const cart = document.getElementById('cart')
 
-// search_btn.addEventListener('click', () => {
-//      search_menu.style.visibility = 'visible';
+search_btn.addEventListener('click', () => {
+     search_menu.style.visibility = 'visible';
      
-// })
+})
 
 const close_search_form = document.getElementById('close-search-form');
 close_search_form.addEventListener('click', () => {
@@ -42,7 +42,7 @@ setInterval(() => {
           current =  0;
      }
 
-}, 5000);
+}, 10000);
 
 
 const reset = () => {
