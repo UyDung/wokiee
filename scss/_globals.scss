@@ -85,4 +85,7 @@ body {
      font-size: torem(16);
      color: v.$btn_color;
      cursor: pointer;
+     transition: background-color .3s linear;
 }
+
+

@@ -71,6 +71,7 @@ body {
   font-size: 1rem;
   color: #191919;
   cursor: pointer;
+  transition: background-color 0.3s linear;
 }
 
 header nav.panel-menu {
@@ -253,6 +254,9 @@ header .showcase__slides {
 header .showcase__slides .slide.active {
   opacity: 1;
 }
+header .showcase__slides .slide.active .slide__text {
+  top: 50%;
+}
 header .showcase__slides .slide {
   width: 33.33%;
   height: 600px;
@@ -260,19 +264,20 @@ header .showcase__slides .slide {
   left: 0;
   transition: 1s linear;
   opacity: 0;
+  display: flex;
 }
 header .showcase__slides .slide__text {
+  width: 450px;
+  text-align: center;
   position: absolute;
-  top: 200%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  margin: auto;
   font-size: 30px;
-  animation: slideshow 0.5s;
+  line-height: 80px;
+  font-weight: 300;
+  transition: 2s linear;
 }
 header .showcase__slides .slide__text h2 {
   color: blue;
@@ -283,14 +288,11 @@ header .showcase__slides .slide__text h3 {
 header .showcase__slides .slide__text .btn {
   background-color: blue;
   color: #fff;
+  line-height: 1.5;
 }
-@keyframes slideshow {
-  0% {
-    top: 200%;
-  }
-  100% {
-    top: 50%;
-  }
+header .showcase__slides .slide__text .btn:hover {
+  background-color: orange;
+  cursor: pointer;
 }
 header .showcase__navigation {
   position: absolute;
