@@ -1,58 +1,72 @@
-const search_btn = document.getElementById('search-btn');
-const search_menu = document.querySelector('.dropdown-menu')
-const  closeSearchForm = document.getElementById('close-search-form');
-const btnCart = document.getElementById('btn-cart');
-const cart = document.getElementById('cart')
-
-search_btn.addEventListener('click', () => {
-     search_menu.style.visibility = 'visible';
-     
-})
-
-const close_search_form = document.getElementById('close-search-form');
-close_search_form.addEventListener('click', () => {
-     search_menu.style.visibility = 'hidden';
-     
-})
-
-const  displayElement = (item) => {
-     let dropDown = item.parentElement.lastElementChild;
-     console.log(dropDown);
-     // dropDown.style.visibility = 'hidden';
+/***********************
+ * Header scroll fixed
+ */
+{
+    document.addEventListener("scroll", () => {
+        const headerMenu = document.querySelector(".desktop-header");
+        if (window.scrollY > 0) {
+            headerMenu.classList.add("scroll");
+        } else {
+            headerMenu.classList.remove("scroll");
+        }
+        position = window.scrollY; /** position before search form close */
+    });
 }
+var position = window.scrollY; /** position before search form close */
+/*********************
+ *  options dropdown menu
+ */
+{
+    const btnOptions = document.querySelectorAll(".btn-option");
+    const closeSearchForm = document.getElementById("close-search-form");
+    const searchForm = document.getElementById("search-form");
 
-const btnOptions = document.querySelectorAll('.btn-option');
-btnOptions.forEach((item) => {
-   
-   item.addEventListener('click', () => displayElement(item));
-      
-})
-
+    closeSearchForm.addEventListener("click", () => {
+        searchForm.classList.remove("active");
+        /* scroll to position that before search form close  */
+        setTimeout(() => {
+            window.scrollBy(0, position);
+            console.log(position);
+        }, 2);
+    }); 
+    
+    for (let item of btnOptions) {
+         item.addEventListener("click", () => {
+              displayElement(item);
+          });
+     }
+     const displayElement = (item) => {
+         hiddenAllDropDown();
+         const currentDropDown = item.parentElement.lastElementChild;
+         currentDropDown.classList.add("active");
+     };
+     
+     const hiddenAllDropDown = () => {
+         const listItems = document.querySelectorAll(".dropdown-menu");
+         for (let item of listItems) {
+             item.classList.remove("active");
+         }
+     };
+}
 
 /**** showcase slide image */
-const slides = document.querySelectorAll('.slide');
-const slideText = document.querySelectorAll('.slide__text');
-var current = 0;
+{
+    const slides = document.querySelectorAll(".slide");
+    const slideText = document.querySelectorAll(".slide__text");
+    var current = 0;
 
-setInterval(() => {
-     reset();
-     slides[current].classList.add('active');
-     current++;
-     if(current === slides.length) {
-          current =  0;
-     }
+    setInterval(() => {
+        reset();
+        slides[current].classList.add("active");
+        current++;
+        if (current === slides.length) {
+            current = 0;
+        }
+    }, 10000);
 
-}, 10000);
-
-
-const reset = () => {
-     slides.forEach((item) => {
-          item.classList.remove('active');
-     })
-
-    
-
-
+    const reset = () => {
+        slides.forEach((item) => {
+            item.classList.remove("active");
+        });
+    };
 }
-
-

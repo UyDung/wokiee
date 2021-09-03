@@ -56,35 +56,36 @@
                 <!-- 2 Header Container-->
                 <div class="container">
                     <div class="header-holder flex">
-                        <!-- 3 Header logo-->
+                        <!--  Header logo-->
                         <div class="obj-logo">
                             <img src="./images/Logo_95x.png" alt="logo" />
                         </div>
-                        <!-- 3 End of Header Logo-->
+                        <!--  End of Header Logo-->
 
-                        <!-- 3 Header Menu -->
+                        <!-- Header Menu -->
                         <div class="obj-menu">
                             <div class="desktop-parent-menu flex">
-                                <a href="google.com.vn" target="_blank">Home</a>
-                                <a href="google.com.vn" target="_blank">Shop</a>
-                                <a href="google.com.vn" target="_blank">Pages</a>
-                                <a href="google.com.vn" target="_blank">Blog</a>
-                                <a href="google.com.vn" target="_blank">Portfolio</a>
-                                <a href="google.com.vn" target="_blank">Women</a>
-                                <a href="google.com.vn" target="_blank">Men</a>
-                                <a href="google.com.vn" target="_blank">Buy Theme!</a>
+                                <a href="#" target="_blank">Home</a>
+                                <a href="#" target="_blank">Shop</a>
+                                <a href="#" target="_blank">Pages</a>
+                                <a href="#" target="_blank">Blog</a>
+                                <a href="#" target="_blank">Portfolio</a>
+                                <a href="#" target="_blank">Women</a>
+                                <a href="#" target="_blank">Men</a>
+                                <a href="#" target="_blank">Buy Theme!</a>
                             </div>
                         </div>
-                        <!-- 3 End of Header menu-->
+                        <!-- End of Header menu-->
 
-                        <!-- 3 Header personal -->
+                        <!-- Header personal -->
                         <div class="obj-options flex">
                             <!-- Search Option -->
                             <div class="search-option">
                                 <button class="search-btn flex btn-option" id="search-btn" data-tooltip="Search">
-                                    <i class="fas fa-search"></i>
+                                    <i class="fas fa-search "></i>
                                 </button>
-                                <div class="dropdown-menu">
+                                <!-- dropdown menu start-->
+                                <div class="dropdown-menu" id="search-form">
                                     <div class="container">
                                         <form action="#" method="get" role="search">
                                             <div class="form-control">
@@ -107,6 +108,8 @@
                                         </form>
                                     </div>
                                 </div>
+                                <!-- dropdown menu end-->
+
                             </div>
 
                             <!-- Cart Option -->
@@ -114,7 +117,7 @@
                                 <button
                                     class="shopping-btn flex btn-option"
                                     id="btn-cart"
-                                    data-tooltip="Shopping cart"
+                                    data-tooltip="Cart"
                                 >
                                     <i class="fas fa-shopping-cart"></i>
                                 </button>
@@ -129,7 +132,7 @@
                                     <i class="far fa-user"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <ul>
+                                    <ul class="flex">
                                         <li><a href="#">Sign In</a></li>
                                         <li><a href="#">Register</a></li>
                                         <li><a href="#">View Cart</a></li>
@@ -145,7 +148,7 @@
                                     <i class="fas fa-sliders-h"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <ul>
+                                    <ul class="flex">
                                         <li><a href="#">$ Us Dollars</a></li>
                                         <li><a href="#"> &euro Euro</a></li>
                                         <li><a href="#"> &#163; British Pounds</a></li>
@@ -153,14 +156,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- 3 End of Header Personal-->
+                        <!--  End of Header Personal-->
                     </div>
                 </div>
                 <!-- 2 End of Desktop Header Container-->
             </div>
             <!-- 1 End of Desktop Header -->
 
-            <!-- showcase start-->
+            <!--1 showcase start-->
             <div class="showcase">
                 <div class="showcase__container">
                     <!-- slides start-->
@@ -187,12 +190,22 @@
                             <!-- slide text end-->
                          </div>
 
+                         <div class="slide">
+                              <img src="./images/showcase_2.png" loading="lazy" alt="showcase 2" id="slide2" />
+                            <!-- slide text start-->
+                            <div class="slide__text">
+                                <h3 class="action">You are KEY</h3>
+                                <h2>Uy Dũng</h2>
+                                <a href="#" class="btn"> Shop Now</a>
+                              </div>
+                              <!-- slide text end-->
+                           </div>
                         
-                            <iframe class="slide"                           
-                                src="https://www.youtube.com/embed/1gaBCtxEgWw?rel=0&autoplay=1&loop=1"                               
+                            <!-- <iframe class="slide"                           
+                                src="https://www.youtube.com/embed/1gaBCtxEgWw?rel=0&autoplay=0&loop=0"                               
                                 allow="autoplay"
                                 frameborder="0"                                
-                            ></iframe>
+                            ></iframe> -->
                         
                     </div>
                     <!-- slides end-->
@@ -700,7 +713,7 @@
                 </div>
             </section>
         </div>
-        <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+
         <script src="./script/script.js"></script>
     </body>
 </html>

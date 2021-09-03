@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 *,
 *::before,
 *::after {
@@ -78,6 +78,10 @@ body {
   background-color: orangered !important;
 }
 
+a:hover {
+  color: #2254fa;
+}
+
 header nav.panel-menu {
   color: red;
 }
@@ -97,16 +101,19 @@ header .desktop-header {
   background-color: #fff;
 }
 header .desktop-header .container {
-  max-width: 75rem;
+  max-width: 87.5rem;
   height: 100%;
   margin: auto;
-  padding: 0.625rem 0;
-  padding: 0 0.625rem;
+  padding: 0.625rem;
 }
 header .desktop-header .container .header-holder {
   width: 100%;
   height: 100%;
   gap: 1.25rem;
+  /* 3 main obj start*/
+}
+header .desktop-header .container .header-holder .obj-logo {
+  display: flex;
 }
 header .desktop-header .container .header-holder .obj-menu .desktop-parent-menu {
   gap: 0.3125rem;
@@ -117,66 +124,79 @@ header .desktop-header .container .header-holder .obj-menu .desktop-parent-menu 
   font-weight: 500;
 }
 header .desktop-header .container .header-holder .obj-menu .desktop-parent-menu > a:hover {
-  color: #437CF8;
+  color: #2254fa;
 }
 header .desktop-header .container .header-holder .obj-options {
   margin-left: auto;
   display: flex;
   gap: 0.625rem;
+  position: relative;
+  z-index: 22;
+  /* 3 main obj start*/
+  /* dropdown menu of 3 options*/
 }
-header .desktop-header .container .header-holder .obj-options button {
+header .desktop-header .container .header-holder .obj-options > * {
+  position: relative;
+}
+header .desktop-header .container .header-holder .obj-options .btn-option {
   border: 0;
+  background-color: transparent;
+}
+header .desktop-header .container .header-holder .obj-options .btn-option > i {
   color: #706666;
   background-color: transparent;
-  font-size: 1.125rem;
   padding: 0.625rem;
   cursor: pointer;
   position: relative;
-  z-index: 1;
+  font-size: 1.25rem;
 }
-header .desktop-header .container .header-holder .obj-options button::before {
+header .desktop-header .container .header-holder .obj-options .btn-option::before {
   content: attr(data-tooltip);
   width: max-content;
   position: absolute;
   top: 70px;
-  font-size: 0.8125rem;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
   border: none;
   border-radius: 5px;
   padding: 0.3125rem;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s linear;
   visibility: hidden;
   background-color: #fff;
+  color: #706666;
 }
-header .desktop-header .container .header-holder .obj-options button::after {
+header .desktop-header .container .header-holder .obj-options .btn-option::after {
   content: "";
   position: absolute;
   top: 63px;
   border-style: solid;
   border-width: 0 7px 10px 7px;
   border-color: transparent transparent #fff transparent;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s linear;
   visibility: hidden;
 }
-header .desktop-header .container .header-holder .obj-options button:hover::before, header .desktop-header .container .header-holder .obj-options button:hover::after {
+header .desktop-header .container .header-holder .obj-options .btn-option:hover::before, header .desktop-header .container .header-holder .obj-options .btn-option:hover::after {
   transform: translateY(-17px);
   visibility: visible;
   opacity: 1;
 }
-header .desktop-header .container .header-holder .obj-options .search-option {
-  position: relative;
-  z-index: 1;
+header .desktop-header .container .header-holder .obj-options button:hover i {
+  color: #2254fa;
+}
+header .desktop-header .container .header-holder .obj-options .search-option > * {
+  overflow: hidden;
 }
 header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
   visibility: hidden;
-  transition: linear 1s ease-in-out;
-  z-index: 22;
 }
 header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container {
-  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,49 +221,58 @@ header .desktop-header .container .header-holder .obj-options .search-option .dr
 header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form .form-control input:focus {
   outline: none;
 }
-header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form #submit {
-  position: absolute;
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form button {
+  border: 0;
+  background-color: transparent;
+  padding: 0.3125rem;
   right: -0.625rem;
+  cursor: pointer;
+  position: absolute;
+}
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form #submit {
   bottom: 0.625rem;
   font-size: 1.5625rem;
-  cursor: pointer;
-  padding: 0.3125rem;
 }
 header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu .container form #close-search-form {
-  position: absolute;
-  right: -0.3125rem;
   top: -0.625rem;
-  cursor: pointer;
   font-size: 0.875rem;
-  padding: 0.3125rem;
 }
-@keyframes show-dropdown-menu {
-  0% {
-    top: -800px;
-  }
-  100% {
-    top: 0;
-  }
+header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu.active {
+  visibility: visible;
 }
 header .desktop-header .container .header-holder .obj-options .dropdown-menu {
   position: absolute;
-  top: 40px;
-  width: 12.5rem;
-  height: 12.5rem;
+  position: fixed;
+  top: 45px;
+  right: 10px;
+  max-height: 0;
+  width: 250px;
   visibility: hidden;
-  background-color: red;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
 }
-header .desktop-header .container .header-holder .obj-options .cart-option {
-  position: relative;
-  z-index: 22;
+header .desktop-header .container .header-holder .obj-options .dropdown-menu > * {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 12.5rem;
+  padding: 1.25rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  width: 100%;
+  max-height: max-content;
+  background-color: #fff;
 }
-header .desktop-header .container .header-holder .obj-options .account-option {
-  position: relative;
-  z-index: 22;
+header .desktop-header .container .header-holder .obj-options .dropdown-menu.active {
+  max-height: 500px;
+  visibility: visible;
 }
-header .desktop-header .container .header-holder .obj-options .setting-option {
-  position: relative;
-  z-index: 22;
+header .desktop-header.scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  box-shadow: 0 0px 5px 0px;
 }
 header .showcase {
   width: 100%;
@@ -293,7 +322,7 @@ header .showcase__slides .slide__text h3 {
   color: #fcb93e;
 }
 header .showcase__slides .slide__text .btn {
-  background-color: blue;
+  background-color: #2254fa;
   color: #fff;
   line-height: 1.5;
 }
@@ -354,7 +383,7 @@ header .showcase__navigation *:hover {
   transition: color 0.3s linear;
 }
 .main .categories .item:hover .btn {
-  background-color: #437CF8;
+  background-color: #2254fa;
   color: #fff;
 }
 .main .categories .item img {
@@ -420,7 +449,7 @@ header .showcase__navigation *:hover {
   position: relative;
 }
 .best-sales__items .product__image .compare > *:hover {
-  background-color: #437CF8;
+  background-color: #2254fa;
   color: #fff;
   visibility: visible;
 }
@@ -429,6 +458,7 @@ header .showcase__navigation *:hover {
   color: #000;
   transform: translateX(60px);
   opacity: 1;
+  z-index: 22;
 }
 .best-sales__items .product__image .compare > *::before {
   content: attr(data-tooltip);
@@ -440,8 +470,8 @@ header .showcase__navigation *:hover {
   padding: 0.125rem 0.3125rem;
   opacity: 0;
   transition: 0.3s linear;
-  z-index: 123;
   box-shadow: 0px 0px 5px 0px;
+  z-index: 1;
 }
 .best-sales__items .product__image .compare > *::after {
   content: "";
@@ -453,8 +483,8 @@ header .showcase__navigation *:hover {
   position: absolute;
   right: 112px;
   opacity: 0;
-  z-index: 3;
   transition: 0.3s linear;
+  z-index: 1;
 }
 .best-sales__items .product__image .label-location {
   position: absolute;
@@ -468,7 +498,7 @@ header .showcase__navigation *:hover {
   border-radius: 3px;
 }
 .best-sales__items .product__image .label-location .label-new {
-  background-color: #437CF8;
+  background-color: #2254fa;
   border-radius: 3px;
   padding: 0 0.3125rem;
 }
@@ -489,7 +519,7 @@ header .showcase__navigation *:hover {
 .best-sales__items .product__description .countdown-box {
   height: 80px;
   gap: 0.625rem;
-  color: #437CF8;
+  color: #2254fa;
   position: absolute;
   top: -80px;
   left: 0;
@@ -525,7 +555,7 @@ header .showcase__navigation *:hover {
 }
 .best-sales__items .product__description .product__inside-hover .add-to-cart .btn {
   margin-top: 0.625rem;
-  background-color: #437CF8;
+  background-color: #2254fa;
   color: #fff;
   opacity: 0;
   transition: 0.1s linear;
