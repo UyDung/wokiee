@@ -22,31 +22,30 @@ var position = window.scrollY; /** position before search form close */
     const searchForm = document.getElementById("search-form");
 
     closeSearchForm.addEventListener("click", () => {
-        searchForm.classList.remove("active");
+        searchForm.classList.remove("clicked");
         /* scroll to position that before search form close  */
         setTimeout(() => {
             window.scrollBy(0, position);
             console.log(position);
         }, 2);
-    }); 
-    
+    });
+
     for (let item of btnOptions) {
-         item.addEventListener("click", () => {
-              displayElement(item);
-          });
-     }
-     const displayElement = (item) => {
-         hiddenAllDropDown();
-         const currentDropDown = item.parentElement.lastElementChild;
-         currentDropDown.classList.add("active");
-     };
-     
-     const hiddenAllDropDown = () => {
-         const listItems = document.querySelectorAll(".dropdown-menu");
-         for (let item of listItems) {
-             item.classList.remove("active");
-         }
-     };
+        item.addEventListener("click", (item) => {
+            hiddenAllDropDown();
+            const direct = item.path[2].querySelector(".dropdown-menu")
+            direct.classList.toggle("clicked")
+            console.log(item);
+            console.log(direct);
+        });
+    }
+
+    const hiddenAllDropDown = () => {
+        const listItems = document.querySelectorAll(".dropdown-menu");
+        for (let item of listItems) {
+            item.classList.remove("active");
+        }
+    };
 }
 
 /**** showcase slide image */

@@ -64,10 +64,6 @@ header {
                     position: relative;
                     z-index: 22;
 
-                    > * {
-                        position: relative;
-                    }
-
                     .btn-option {
                         border: 0;
                         background-color: transparent;
@@ -124,6 +120,7 @@ header {
                     }
 
                     .search-option {
+                      
                         > * {
                             overflow: hidden;
                         }
@@ -189,22 +186,19 @@ header {
                             }
                         }
 
-                        .dropdown-menu.active {
-                            visibility: visible;
-                        }
+                        
                     }
                     /* 3 main obj start*/
 
                     /* dropdown menu of 3 options*/
                     .dropdown-menu {
-                        position: absolute;
-                        position: fixed;
+                        position: absolute;                   
                         top: 45px;
                         right: 10px;
                         max-height: 0;
                         width: 250px;
                         visibility: hidden;
-                        transition: max-height 0.3s ease-out;
+                        transition: max-height 0.2s ease-out;
                         overflow: hidden;
 
                         > * {
@@ -220,7 +214,7 @@ header {
                         }
                     }
 
-                    .dropdown-menu.active {
+                    .dropdown-menu.clicked {
                         max-height: 500px;
                         visibility: visible;
                     }

@@ -135,9 +135,6 @@ header .desktop-header .container .header-holder .obj-options {
   /* 3 main obj start*/
   /* dropdown menu of 3 options*/
 }
-header .desktop-header .container .header-holder .obj-options > * {
-  position: relative;
-}
 header .desktop-header .container .header-holder .obj-options .btn-option {
   border: 0;
   background-color: transparent;
@@ -237,18 +234,14 @@ header .desktop-header .container .header-holder .obj-options .search-option .dr
   top: -0.625rem;
   font-size: 0.875rem;
 }
-header .desktop-header .container .header-holder .obj-options .search-option .dropdown-menu.active {
-  visibility: visible;
-}
 header .desktop-header .container .header-holder .obj-options .dropdown-menu {
   position: absolute;
-  position: fixed;
   top: 45px;
   right: 10px;
   max-height: 0;
   width: 250px;
   visibility: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.2s ease-out;
   overflow: hidden;
 }
 header .desktop-header .container .header-holder .obj-options .dropdown-menu > * {
@@ -262,7 +255,7 @@ header .desktop-header .container .header-holder .obj-options .dropdown-menu > *
   max-height: max-content;
   background-color: #fff;
 }
-header .desktop-header .container .header-holder .obj-options .dropdown-menu.active {
+header .desktop-header .container .header-holder .obj-options .dropdown-menu.clicked {
   max-height: 500px;
   visibility: visible;
 }
