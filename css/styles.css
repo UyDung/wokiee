@@ -273,6 +273,8 @@ header .showcase {
   position: relative;
   margin: auto;
   overflow: hidden;
+  /* Navigation of slide */
+  /* Arrow slide */
 }
 header .showcase__slides {
   width: 300%;
@@ -326,6 +328,7 @@ header .showcase__navigation {
   transform: translateX(-50%);
   width: 100px;
   justify-content: space-between;
+  z-index: 23;
 }
 header .showcase__navigation > * {
   width: 20px;
@@ -339,6 +342,26 @@ header .showcase__navigation > .active {
 header .showcase__navigation *:hover {
   background-color: blue;
   cursor: pointer;
+}
+header .showcase .arrow-slide .arrow:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+header .showcase .arrow-slide .arrow-slide-left {
+  position: absolute;
+  z-index: 123;
+  top: 50%;
+  left: 3.125rem;
+  font-size: 2.8125rem;
+  padding: 0.3125rem;
+}
+header .showcase .arrow-slide .arrow-slide-right {
+  position: absolute;
+  z-index: 123;
+  top: 50%;
+  right: 3.125rem;
+  font-size: 2.5rem;
+  padding: 0.3125rem;
 }
 
 .main {

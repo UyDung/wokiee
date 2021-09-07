@@ -293,6 +293,7 @@ header {
             }
         }
 
+        /* Navigation of slide */
         &__navigation {
             position: absolute;
             bottom: 20px;
@@ -300,6 +301,7 @@ header {
             transform: translateX(-50%);
             width: 100px;
             justify-content: space-between;
+            z-index: 23;
 
             > * {
                 width: 20px;
@@ -316,6 +318,32 @@ header {
                 background-color: blue;
                 cursor: pointer;
             }
+        }
+
+        /* Arrow slide */
+        .arrow-slide {
+              .arrow:hover {
+                   opacity: 0.5;
+                   cursor: pointer;
+              }
+
+              .arrow-slide-left {
+                   position: absolute;
+                   z-index: 123;
+                   top: 50%;
+                   left: g.torem(50);
+                   font-size: g.torem(45);
+                   padding: g.torem(5);                  
+              }
+
+              .arrow-slide-right {
+                   position: absolute;
+                   z-index: 123;
+                   top: 50%;
+                   right: g.torem(50);
+                   font-size: g.torem(40);  
+                   padding: g.torem(5);                
+              }
         }
     }
 }
