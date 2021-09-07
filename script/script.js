@@ -31,9 +31,9 @@ var position = window.scrollY; /** position before search form close */
     });
 
     for (let item of btnOptions) {
-        item.addEventListener('click', hiddenAllDropDown());
+        item.addEventListener("click", hiddenAllDropDown());
 
-        item.addEventListener("click", (item) => {                
+        item.addEventListener("click", (item) => {
             const direct = item.path[2].querySelector(".dropdown-menu");
             direct.classList.toggle("clicked");
 
@@ -43,11 +43,11 @@ var position = window.scrollY; /** position before search form close */
         });
     }
 
-    function hiddenAllDropDown(){
+    function hiddenAllDropDown() {
         for (let item of listItems) {
             item.classList.remove("clicked");
         }
-    };
+    }
 
     //close Options menu
     document.addEventListener("click", (e) => {
@@ -59,20 +59,16 @@ var position = window.scrollY; /** position before search form close */
 /**** showcase slide image */
 {
     const slides = document.querySelectorAll(".slide");
-    const slideText = document.querySelectorAll(".slide__text");
     const navItems = document.querySelectorAll(".nav-item");
+    const arrowLeft = document.querySelector(".arrow-slide-left");
+    const arrowRight = document.querySelector(".arrow-slide-right");
 
     var current = 0;
 
     // automatic slide
     setInterval(() => {
-        reset();
-        slideAuto();
         current++;
-        if (current === slides.length) {
-            current = 0;
-        }
-        console.log("current is " + current);
+        slideShow();
     }, 10000);
 
     const reset = () => {
@@ -85,43 +81,38 @@ var position = window.scrollY; /** position before search form close */
         }
     };
 
-    const slideAuto = () => {
+    const slideShow = () => {
+         reset();
+        if (current >= slides.length) {
+            current = 0;
+        } else if (current < 0) {
+            current = slides.length - 1;
+        }
+
         slides[current].classList.add("active");
         navItems[current].classList.add("active");
     };
 
     // manual slider click
-    for (let item of navItems) {
-        item.addEventListener("click", () => {
-            setTimeout(() => {
-               //  clearInterval();
-                //  current--;
-            }, 3000);
-
-            const currentID = item.id.charAt(item.id.length - 1);
-            for (let i = 0; i < slides.length; i++) {
-                if (i === currentID - 1) {
-                    slides[i].classList.add("active");
-                    navItems[i].classList.add("active");
-                } else {
-                    slides[i].classList.remove("active");
-                    navItems[i].classList.remove("active");
-                }
-            }
-        });
+    if (slides.length === navItems.length) {
+        for (let i = 0; i < slides.length; i++) {
+            navItems[i].addEventListener("click", () => {
+                reset();
+                current = i;
+                slides[i].classList.add("active");
+                navItems[i].classList.add("active");
+            });
+        }
+    } else {
+        console.log("NavItems length must equal Slides length");
     }
 
-    // arrow slide click
-    const arrowLeft = document.querySelector(".arrow-slide-left");
-    const arrowRight = document.querySelector(".arrow-slide-right");
-
     arrowLeft.addEventListener("click", () => {
-        setTimeout(() => {
-            clearInterval();
-        }, 3000);
-
-        console.log(current);
+        current--;
+        slideShow();
     });
-
-    arrowRight.addEventListener("click", () => {});
+    arrowRight.addEventListener("click", () => {
+        current++;
+        slideShow();
+    });
 }

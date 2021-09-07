@@ -294,7 +294,7 @@ header {
         }
 
         /* Navigation of slide */
-        &__navigation {
+        &__nav {
             position: absolute;
             bottom: 20px;
             left: 50%;
@@ -315,8 +315,12 @@ header {
             }
 
             *:hover {
-                background-color: blue;
+                opacity: 0.5;
                 cursor: pointer;
+            }
+
+            *:active {
+                 transform: scale(1.3);
             }
         }
 
