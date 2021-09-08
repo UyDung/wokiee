@@ -584,7 +584,7 @@ header .showcase .arrow-slide .arrow-slide-right {
   display: none;
 }
 .best-sales__items .product:hover .product__description {
-  transform: translateY(-80px);
+  transform: translateY(-79px);
 }
 .best-sales__items .product:hover .product__description .btn {
   opacity: 1;
