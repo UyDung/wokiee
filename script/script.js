@@ -9,10 +9,15 @@
         } else {
             headerMenu.classList.remove("scroll");
         }
-        position = window.scrollY; /** position before search form close */
+
+        /** xác định vị trí khi scroll */
+        position = window.scrollY; 
     });
 }
-var position = window.scrollY; /** position before search form close */
+
+ /** xác định vị trí khi scroll */
+var position = window.scrollY; 
+
 /*********************
  *  options dropdown menu
  */
@@ -24,19 +29,20 @@ var position = window.scrollY; /** position before search form close */
 
     closeSearchForm.addEventListener("click", () => {
         searchForm.classList.remove("clicked");
-        /* scroll to position that before search form close  */
+        /* scroll về vị trí trước khi click để mở search form  */
         setTimeout(() => {
             window.scrollBy(0, position);
         }, 2);
     });
 
     for (let item of btnOptions) {
-        item.addEventListener("click", hiddenAllDropDown());
-
+         /* Click vào item sẽ mở / đóng dropdown menu của item lại */
         item.addEventListener("click", (item) => {
             const direct = item.path[2].querySelector(".dropdown-menu");
+            console.log(direct)
             direct.classList.toggle("clicked");
 
+            // Khi click vào dropdown menu thì không tự đóng chính nó lại
             direct.parentNode.addEventListener("click", (e) => {
                 e.stopPropagation();
             });
@@ -49,7 +55,7 @@ var position = window.scrollY; /** position before search form close */
         }
     }
 
-    //close Options menu
+    // Đóng tất cả các dropdown menu 
     document.addEventListener("click", (e) => {
         for (let item of listItems) {
             item.classList.remove("clicked");
