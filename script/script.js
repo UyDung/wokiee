@@ -55,7 +55,7 @@ var position = window.scrollY;
         }
     }
 
-    // Đóng tất cả các dropdown menu 
+    // Đóng tất cả các dropdown menu đang mở khi click ra bên ngoài nó
     document.addEventListener("click", (e) => {
         for (let item of listItems) {
             item.classList.remove("clicked");
